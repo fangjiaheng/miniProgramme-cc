@@ -1,4 +1,2 @@
-<!--index.wxml-->
-<view class="container">
-  hello
-</view>
+<!--pages/mine/index.wxml-->
+<text>pages/mine/index.wxml</text>

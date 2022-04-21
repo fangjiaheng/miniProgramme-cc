@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/task/task",
-    "pages/mall/mall",
-    "pages/mine/mine"
+    "pages/task/index",
+    "pages/mall/index",
+    "pages/mine/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,24 +20,30 @@
         "selectedIconPath": "/imgs/tabBarIcon/cool.png"
       },
       {
-        "pagePath": "pages/task/task",
+        "pagePath": "pages/task/index",
         "text": "计划清单",
         "iconPath": "/imgs/tabBarIcon/jihua.png",
         "selectedIconPath": "/imgs/tabBarIcon/wink.png"
       },
       {
-        "pagePath": "pages/mall/mall",
+        "pagePath": "pages/mall/index",
         "text": "可爱币商城",
         "iconPath": "/imgs/tabBarIcon/shangpin.png",
         "selectedIconPath": "/imgs/tabBarIcon/happy.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/mine/index",
         "text": "我的",
         "iconPath": "/imgs/tabBarIcon/aixin.png",
         "selectedIconPath": "/imgs/tabBarIcon/angel.png"
       }
     ]
+  },
+  "plugins": {
+    "calendar": {
+        "version": "1.1.3",
+        "provider": "wx92c68dae5a8bb046"
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
