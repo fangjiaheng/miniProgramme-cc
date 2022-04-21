@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
   <calendar/>
+  <!-- https://github.com/czcaiwj/calendar -->
   <!-- <calendar days-color = "{{days_style}}" bindprevMonth="prevSign" bindnextMonth="nextSign" board-style="board" calendar-style="calendar"/> -->
 </view>
