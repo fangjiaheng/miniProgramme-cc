@@ -1,0 +1,31 @@
+page {
+  background-color: #efefef;
+}
+
+.calender-container{
+  padding: 15px;
+}
+
+.calendar {
+  background-color: pink;
+  padding-top: 10px;
+  border-radius: 15px;
+}
+
+.calender-header {
+  font-size: large;
+  color: #59518d;    
+}
+
+.calender-board {
+  color: #4d2105;
+  font-weight: bold;
+}
+
+.sign{
+  margin: 0 15px;
+  padding: 15px;
+  background-color: pink;
+  text-align: center;
+}
+

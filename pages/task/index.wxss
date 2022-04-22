@@ -1,1 +1,15 @@
-/* pages/task/index.wxss */
+.header{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.content{
+  display: flex;
+}
+
+.item{
+  width: 33.3%;
+  text-align: center;
+}

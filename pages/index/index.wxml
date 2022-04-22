@@ -1,6 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-  <calendar/>
-  <!-- https://github.com/czcaiwj/calendar -->
-  <!-- <calendar days-color = "{{days_style}}" bindprevMonth="prevSign" bindnextMonth="nextSign" board-style="board" calendar-style="calendar"/> -->
+  <view class="calender-container">
+    <!-- https://github.com/czcaiwj/calendar -->
+    <calendar 
+      weeks-type="cn"
+      cell-size="30"
+      show-more-days="{{true}}"
+      days-color="{{days_style}}"
+      calendar-style="calendar"
+      header-style="calender-header" board-style="calender-board"
+      bindprevMonth="prevSign" bindnextMonth="nextSign"
+    />
+  </view>
+  <view class="sign">
+    签到
+  </view>
+  <view>
+    小可爱当前可爱币: {{ coin }}
+  </view>
+  <view wx:for="{{ list }}" wx:key="{{ list.id }}">
+    {{ item.name }}
+  </view>
+  
+
 </view>

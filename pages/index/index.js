@@ -1,20 +1,69 @@
+// pages/index.js
+const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
 Page({
-  data: {
-  },
-  onLoad() {
-  },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
+
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        year: new Date().getFullYear(),      // 年份
+        month: new Date().getMonth() + 1,    // 月份
+        day: new Date().getDate(),
+        str: MONTHS[new Date().getMonth()],  // 月份字符串
+
+        days_style: [],
+        coin: 1,
+        list: [
+          {
+            id: 0,
+            name: '订单'
+          },
+          {
+            id: 1,
+            name: '愿望单'
+          },
+          {
+            id: 2,
+            name: '留言'
+          }
+        ]
+    },
+
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function (options) {
+        const days_count = new Date(this.data.year, this.data.month, 0).getDate();
+        
+        let days_style = new Array;
+        for (let i = 1; i <= days_count; i++) {
+            const date = new Date(this.data.year, this.data.month - 1, i);
+            if (i == 12) {
+                days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#b49eeb'
+                });
+            } else if (i == 17) {
+                days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#f5a8f0'
+                });
+            } else if (i == 21) {
+                days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#aad4f5'
+                });
+            } else if (i == 25) {
+                days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#84e7d0'
+                });
+            } else {
+                days_style.push({
+                    month: 'current', day: i, color: '#a18ada'
+                });
+            }
+        }
+
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
-  }
+          days_style
+        });
+    },
 })
