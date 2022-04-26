@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container-fluid">
-    <text class="title">Demo3</text>
+    <text class="title">放成就 历史 男朋友是谁 互相发任务</text>
     <view class="demo3">
         <calendar cell-size="30" header-style="demo3-header" board-style="demo3-board" weeks-type="cn" />
     </view>

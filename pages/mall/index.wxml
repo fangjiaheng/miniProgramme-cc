@@ -8,7 +8,7 @@
     <view class="item">喝水</view>
     <view class="item">50</view>
     <view class="item">
-      <button size="mini">完成</button>
+      <button size="mini">兑换</button>
     </view>
   </view>
 </view>
