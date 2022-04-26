@@ -1,14 +1,15 @@
 <view>
+  <image class='background' src="../../imgs/bg_strawberry.jpg" mode="aspectFill"></image>
   <view class="header">
-    <view class="item">任务内容</view>
-    <view class="item">可爱币</view>
-    <view class="item">操作</view>
+    <view class="header-item">任务内容</view>
+    <view class="header-item">可爱币</view>
+    <view class="header-item">操作</view>
   </view>
-  <view class="content" wx:for="{{ 10 }}">
-    <view class="item">喝水</view>
-    <view class="item">50</view>
+  <view class="content" wx:for="{{ taskList }}" wx:key="{{ id }}">
+    <view class="item">{{ item.name }}</view>
+    <view class="item">{{ item.reward }}</view>
     <view class="item">
-      <button size="mini">完成</button>
+      <button style="font-size: 30rpx;width: 150rpx;" size="mini" disabled="{{ item.finished? true: false }}">{{ item.finished? "已完成": "完成" }}</button>
     </view>
   </view>
 </view>

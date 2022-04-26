@@ -1,4 +1,4 @@
-// pages/index.js
+import request from '../../request/index'
 const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
 Page({
@@ -13,7 +13,7 @@ Page({
         str: MONTHS[new Date().getMonth()],  // 月份字符串
 
         days_style: [],
-        coin: 1,
+        points: 1,
         list: [
           {
             id: 0,
@@ -34,6 +34,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      this.getUserPonits()
+
         const days_count = new Date(this.data.year, this.data.month, 0).getDate();
         
         let days_style = new Array;
@@ -66,4 +68,14 @@ Page({
           days_style
         });
     },
+    getUserPonits() {
+      request({
+        url: '/select',
+        method: "GET"
+      }).then((result) => {
+        this.setData({
+          points: 100
+        })
+      }).catch(err => console.log(err))
+    }
 })

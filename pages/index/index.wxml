@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<view class="container">
+<image class='background' src="../../imgs/bg_bunny.jpeg" mode="aspectFill"></image>
+<view>
   <view class="calender-container">
     <!-- https://github.com/czcaiwj/calendar -->
     <calendar 
@@ -15,12 +16,22 @@
   <view class="sign">
     签到
   </view>
-  <view>
-    小可爱当前可爱币: {{ coin }}
+  <view class="points">
+    小可爱当前可爱币: {{ points }}
   </view>
-  <view wx:for="{{ list }}" wx:key="{{ list.id }}">
-    {{ item.name }}
+  <view class="list">
+    <view class="list-item" wx:for="{{ list }}" wx:key="{{ id }}">
+      <view>{{ item.name }}</view>
+      <image style="width: 15px; height: 15px;" src="../../imgs/icon/arrow.png" alt=""/>
+    </view>
   </view>
-  
-
+  <view class="card">
+    <view class="card-title">
+      卡券
+    </view>
+    <view class="card-content">
+      <view class="coupon">听话券</view>
+      <view class="coupon">一言为定券</view>
+    </view>
+  </view>
 </view>
