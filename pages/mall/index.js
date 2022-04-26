@@ -5,7 +5,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    rewardList: [
+      {
+        id: 1,
+        name: '🍥辣条',
+        payment: 50,
+        exchange: false, // 是否已兑换
+      },
+      {
+        id: 2,
+        name: '🍦冰淇淋',
+        payment: 300,
+        exchange: true
+      },
+      {
+        id: 3,
+        name: '⛓项链',
+        payment: 300,
+        exchange: false
+      },
+      {
+        id: 4,
+        name: '💫耳环',
+        payment: 300,
+        exchange: false
+      },
+      {
+        id: 5,
+        name: '💄口红',
+        payment: 300,
+        exchange: false
+      },
+      {
+        id: 6,
+        name: '💁‍♀️粉底液',
+        payment: 300,
+        exchange: false
+      },
+      {
+        id: 7,
+        name: '🌈精华',
+        payment: 300,
+        exchange: false
+      }
+    ]
   },
 
   /**

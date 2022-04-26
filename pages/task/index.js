@@ -5,7 +5,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    taskList: [
+      {
+        id: 1,
+        name: '🥤喝一杯水',
+        reward: 50,
+        finished: true
+      },
+      {
+        id: 2,
+        name: '🥤🥤喝两杯水',
+        reward: 100,
+        finished: false
+      },
+      {
+        id: 3,
+        name: '🥤🥤喝三杯水',
+        reward: 150,
+        finished: false
+      },
+      {
+        id: 4,
+        name: '🍙吃早饭',
+        reward: 100,
+        finished: true
+      },
+      {
+        id: 5,
+        name: '🍓吃水果',
+        reward: 100,
+        finished: false
+      },
+      {
+        id: 6,
+        name: '🏃🏻‍♀️运动',
+        reward: 100,
+        finished: false
+      },
+      {
+        id: 7,
+        name: '😪早睡',
+        reward: 200,
+        finished: false
+      }
+    ]
   },
 
   /**
