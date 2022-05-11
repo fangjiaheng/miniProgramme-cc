@@ -9,7 +9,6 @@
     <view class="item">{{ item.name }}</view>
     <view class="item">{{ item.payment }}</view>
     <view class="item">
-      <!-- <button style="font-size: 30rpx;width: 150rpx;" size="mini" disabled="{{ item.exchange? true: false }}">{{ item.exchange? "已兑换": "兑换" }}</button> -->
       <button bindtap="exchange" data-goodsid="{{item.id}}" data-consume="{{item.payment}}" style="font-size: 30rpx;width: 150rpx;" size="mini">兑换</button>
     </view>
   </view>
