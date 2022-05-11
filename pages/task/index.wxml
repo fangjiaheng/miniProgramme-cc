@@ -5,11 +5,11 @@
     <view class="header-item">可爱币</view>
     <view class="header-item">操作</view>
   </view>
-  <view class="content" wx:for="{{ taskList }}" wx:key="{{ id }}">
+  <view class="content" wx:for="{{ taskList }}" wx:key="id">
     <view class="item">{{ item.name }}</view>
     <view class="item">{{ item.reward }}</view>
     <view class="item">
-      <button style="font-size: 30rpx;width: 150rpx;" size="mini" disabled="{{ item.finished? true: false }}">{{ item.finished? "已完成": "完成" }}</button>
+      <button bindtap="finishtask" data-taskid="{{item.id}}" data-reward="{{item.reward}}" style="font-size: 30rpx;width: 150rpx;" size="mini" disabled="{{ item.finished? true: false }}">{{ item.finished? "已完成": "完成" }}</button>
     </view>
   </view>
 </view>

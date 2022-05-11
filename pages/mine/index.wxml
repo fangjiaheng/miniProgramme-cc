@@ -1,4 +1,4 @@
-<!--pages/mine/index.wxml-->
+<!-- pages/mine/index.wxml
 <view>
   1轮播图
   2添加任务功能
@@ -8,4 +8,21 @@
   6成就系统
   7情侣头像上传
   8吃啥子随机选择
+</view> -->
+
+<view class="container">
+  <view class="userinfo">
+    <!-- 授权前 -->
+    <block wx:if="{{!hasUserInfo}}">
+      <button bindtap="getUserProfile"> 获取头像昵称 </button>
+    </block>
+    <!-- 授权后 -->
+    <block wx:else>
+     <view class="users">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+     </view>
+    </block>
+  </view>
 </view>
+

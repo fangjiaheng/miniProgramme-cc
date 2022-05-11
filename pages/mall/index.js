@@ -1,4 +1,5 @@
-// pages/mall/index.js
+import request from '../../request/index'
+
 Page({
 
   /**
@@ -45,7 +46,7 @@ Page({
       {
         id: 7,
         name: '🌈精华',
-        payment: 300,
+        payment: 10000,
         exchange: false
       }
     ]
@@ -57,7 +58,32 @@ Page({
   onLoad(options) {
 
   },
-
+  // 兑换商品
+  exchange(e) {
+    // 发起兑换请求
+    request({
+      url: '/exchangegoods',
+      data: {
+        goodsid: e.currentTarget.dataset.goodsid,
+        consume: e.currentTarget.dataset.consume
+      },
+      method: "POST"
+    }).then((result) => {
+      console.log(result)
+      if(result.data.status == 500) {
+        // 兑换失败
+        wx.showToast({
+          title: '所需硬币不够',
+          icon: 'error'
+        })
+      } else if(result.data.status == 200) {
+        // 兑换成功
+        wx.showToast({
+          title: '兑换成功'
+        })
+      }
+    }).catch(err => console.log(err))
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

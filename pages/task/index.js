@@ -1,4 +1,5 @@
-// pages/task/index.js
+import request from '../../request/index'
+
 Page({
 
   /**
@@ -10,7 +11,7 @@ Page({
         id: 1,
         name: '🥤喝一杯水',
         reward: 50,
-        finished: true
+        finished: false
       },
       {
         id: 2,
@@ -20,7 +21,7 @@ Page({
       },
       {
         id: 3,
-        name: '🥤🥤喝三杯水',
+        name: '🥤🥤🥤喝三杯水',
         reward: 150,
         finished: false
       },
@@ -28,7 +29,7 @@ Page({
         id: 4,
         name: '🍙吃早饭',
         reward: 100,
-        finished: true
+        finished: false
       },
       {
         id: 5,
@@ -55,9 +56,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getTodayfinishedTask()
   },
-
+  // 获取今天已经完成的任务列表
+  getTodayfinishedTask() {
+    request({
+      url: `/finishedlist`,
+      method: "GET"
+    }).then((result) => {
+      console.log(result)
+      let finishedList = result.data.list
+      this.data.taskList.forEach((task,index) => {
+        finishedList.forEach(item => {
+          if(task.id == item) {
+            let key = `taskList[${index}].finished`
+            this.setData({
+              [key]: true
+            })
+          }
+        })
+      })
+    }).catch(err => console.log(err))
+  },
+  // 完成任务
+  finishtask(e) {
+    // console.log(e.currentTarget.dataset.taskid)
+    request({
+      url: '/finishtask',
+      data: {
+        taskid: e.currentTarget.dataset.taskid,
+        reward: e.currentTarget.dataset.reward
+      },
+      method: "POST"
+    }).then((result) => {
+      this.getTodayfinishedTask()
+    }).catch(err => console.log(err))
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

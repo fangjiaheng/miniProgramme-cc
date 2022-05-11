@@ -13,14 +13,14 @@
       bindprevMonth="prevSign" bindnextMonth="nextSign"
     />
   </view>
-  <view class="sign">
-    签到
+  <view class="sign" bindtap="signIn">
+    {{ signedin ? '已签到': '签到'}}
   </view>
   <view class="points">
-    小可爱当前可爱币: {{ points }}
+    小可爱当前可爱币: {{ coins }}
   </view>
   <view class="list">
-    <view class="list-item" wx:for="{{ list }}" wx:key="{{ id }}">
+    <view class="list-item" wx:for="{{ list }}" wx:key="id">
       <view>{{ item.name }}</view>
       <image style="width: 15px; height: 15px;" src="../../imgs/icon/arrow.png" alt=""/>
     </view>
