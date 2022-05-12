@@ -21,7 +21,10 @@
   </view>
   <view class="list">
     <view class="list-item" wx:for="{{ list }}" wx:key="id">
-      <view>{{ item.name }}</view>
+      <view>
+        <image style="width: 20px; height: 20px;" src="../../imgs/icon/bunny.png" alt=""/>
+        {{ item.name }}
+      </view>
       <image style="width: 15px; height: 15px;" src="../../imgs/icon/arrow.png" alt=""/>
     </view>
   </view>

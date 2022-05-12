@@ -1,7 +1,7 @@
-const token = wx.getStorageSync('token')
+const baseUrl = "http://127.0.0.1:3000"
 
 const request = (params) => {
-  const baseUrl = "http://127.0.0.1:3000"
+  const token = wx.getStorageSync('token')
   return new Promise((resolve, reject) => {
     wx.request({
       ...params,
